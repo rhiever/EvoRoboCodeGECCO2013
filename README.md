@@ -40,7 +40,7 @@ There are two options for battles, yardstick battles and inter-challenger battle
 
 We calculate the fitness for the bot by calculating a value based off of the bot's score. Specifically, we define the fitness from the battle(s), `fitness_challenger`, as
 
-    `fitness_challenger` = (`challenger_score` + 1.0) / (`sum_of_both_bots_scores` + 1.0)
+`fitness_challenger` = (`challenger_score` + 1.0) / (`sum_of_both_bots_scores` + 1.0)
 
 , where `challenger_score` is the score of the bot being evaluated and `sum_of_both_bots_scores` is the sum of the scores by the bot being evaluated *and* the opponent bot. If the bot competes against multiple bots in a generation (in separate battles), we define the bot's fitness as the average of `fitness_challenger` from all battles. We add `1.0` to the numerator and denominator to make reducing the opponent's score advantageous even if a bot doesn't score any points itself. After all of the bots have been evaluated, a ranked list of bots is returned. Although it is only this ranked list that is used for breeding, the average scores are reported in the log for the evolutionary run.
 
